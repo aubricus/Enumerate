@@ -1,0 +1,22 @@
+{
+  "name": "enumerate",
+  "main": "build/enumerate.min.js",
+  "version": "0.0.1",
+  "authors": [
+    "Aubrey Taylor <aubricus@gmail.com>"
+  ],
+  "description": "Javascript Pseudo-Enums inspired by Swift.",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
