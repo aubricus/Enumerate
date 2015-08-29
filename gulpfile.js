@@ -84,7 +84,7 @@ gulp.task("test-browser", function(done) {
 });
 
 gulp.task("test-node", function() {
-    run("jasmine").exec();
+    return run("jasmine").exec();
 });
 
 gulp.task("test-amd", function(done) {
@@ -95,8 +95,19 @@ gulp.task("test-amd", function(done) {
     .start();
 });
 
+gulp.task("publish-npm", function(done) {
+    return run("npm publish").exec();
+});
+
+gulp.task("publish-bower", function() {
+    return run("bower register enumerate git://github.com/aubricus/Enumerate.git").exec();
+})
+
 gulp.task("test", ["test-browser", "test-node", "test-amd"]);
 
 gulp.task("build", ["umd", "node-main", "minify", "bundle"]);
 
+gulp.task("publish", ["publish-npm", "publish-bower"]);
+
 gulp.task("default", ["build", "test"]);
+
